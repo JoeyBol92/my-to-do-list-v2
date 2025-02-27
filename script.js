@@ -8,7 +8,6 @@ const deleteList = document.getElementById("clearAll");
 
 // Array to store tasks in
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
-console.log(taskData);
 
 // Function to add task
 const addTask = () => {
@@ -62,23 +61,6 @@ const reset = () => {
 };
 
 // Function to mark task done
-// const markDone = () => {
-//   const todoItems = document.querySelectorAll("li");
-//   console.log(todoItems);
-//   todoItems.forEach((item, index) => {
-//     const checkbox = item.querySelector("input[type=checkbox]");
-//     checkbox.addEventListener("change", (e) => {
-//       taskData[index].done = e.target.checked;
-//       localStorage.setItem("data", JSON.stringify(taskData));
-//       if (e.target.checked) {
-//         item.classList.add("done");
-//       } else {
-//         item.classList.remove("done");
-//       }
-//     });
-//   });
-// };
-
 const markDone = () => {
   const todoItems = document.querySelectorAll("li");
   console.log(todoItems);
@@ -100,7 +82,7 @@ const markDone = () => {
         taskData.unshift(task);
       }
       localStorage.setItem("data", JSON.stringify(taskData));
-      renderToDoList(); // Re-render the list to reflect changes
+      renderToDoList();
     });
   });
 };
@@ -128,7 +110,7 @@ todoForm.addEventListener("submit", (e) => {
 });
 
 // Click event to delete entire list
-deleteList.addEventListener("reset", (e) => {
+deleteList.addEventListener("click", (e) => {
   deleteToDoList();
 });
 
