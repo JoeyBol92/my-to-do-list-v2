@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>My to do list - Get the work done!</title>
+  </head>
+  <body>
+    <header>
+      <h1>My to do list</h1>
+    </header>
+    <main>
+      <div class="todo-form">
+        <form id="todo-form">
+          <div>
+            <input type="text" placeholder="Add a new task" id="todo-input" />
+            <input type="text" placeholder="Add a label" id="label-input" />
+            <label for="favcolor">Label color:</label>
+            <input type="color" id="color-input" value="#19D28B" />
+          </div>
+          <div>
+            <button type="submit" id="addTodoItem">Add</button>
+          </div>
+        </form>
+        <ul class="todo-list"></ul>
+      </div>
+      <button id="clearAll">Clear all items</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

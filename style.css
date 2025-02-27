@@ -1,0 +1,177 @@
+/* Variables */
+:root {
+  --checkmark-color: #6366f1; /* Purple color */
+}
+
+/* General styling */
+header {
+  padding-top: 20px;
+  font-family: "Nunito Sans", serif;
+}
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* font-family: "Open-sans", sans-serif; */
+  font-family: "Nunito", serif;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+/* Styling content to do list */
+.todo-list {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /* padding: 15px; */
+  margin: 30px 0;
+  max-width: 600px;
+}
+
+ul {
+  list-style: none;
+  list-style-position: outside;
+  padding-inline-start: 0%;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  font-weight: 600;
+  /* background: #f3f3f3;
+    border-radius: 10px; */
+}
+
+li:not(:last-child) {
+  /* margin-bottom: 10px; */
+  border-bottom: 1px solid #ccc;
+}
+
+li button {
+  margin-left: auto;
+}
+
+li.done {
+  background: #f3f3f3;
+}
+
+li.done:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+li.done:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+li span {
+  padding-left: 5px;
+}
+
+li.done span.task {
+  text-decoration: line-through;
+}
+
+li span.label {
+  font-size: 12px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .todo-list {
+    max-width: 400px;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Styling checkboxes */
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  border-radius: 9999px;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  border: 2px solid black;
+  appearance: none;
+  -webkit-appearance: none;
+  /* outline: none; */
+  padding: 0 !important;
+}
+
+input[type="checkbox"]:checked {
+  /* appearance: auto; */
+  clip-path: circle(50% at 50% 50%);
+  background-color: var(--checkmark-color);
+  border: 2px solid var(--checkmark-color);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Styling input field to do item */
+#todo-input,
+#label-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 35px;
+  padding: 0 20px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  #todo-input,
+  #label-input {
+    margin-bottom: 10px;
+  }
+}
+
+/* Styling buttons */
+#addTodoItem {
+  background-color: var(--checkmark-color);
+  border: 2px solid var(--checkmark-color);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  height: 35px;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.deleteTodoItem {
+  background-color: white;
+  border-radius: 9999px;
+  font-weight: bold;
+  height: 25px;
+  width: 25px;
+  color: red;
+  /* border-color: red; */
+  border: 2px solid red;
+  padding-top: 2px;
+}
+
+#clearAll {
+  background-color: red;
+  border: 2px solid red;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  height: 35px;
+  padding: 0 20px;
+}
